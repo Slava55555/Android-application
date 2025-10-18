@@ -14,4 +14,19 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+# Игнорируем build файлы во всех заданиях
+assignments/*/build/
+assignments/*/.gradle/
+assignments/*/.idea/
+assignments/*/*.iml
+assignments/*/local.properties
+assignments/*/app/build/
+
+# Но оставляем исходный код и конфиги
+!assignments/*/app/src/
+!assignments/*/app/build.gradle
+!assignments/*/build.gradle
+!assignments/*/settings.gradle
+!assignments/*/gradle/wrapper/
+
 

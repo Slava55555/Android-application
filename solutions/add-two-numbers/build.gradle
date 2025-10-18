@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.twonumbers'
+    namespace 'com.example.addtwonumbers'
     compileSdk 36
 
     defaultConfig {
-        applicationId "com.example.twonumbers"
+        applicationId "com.example.addtwonumbers"
         minSdk 21
         versionCode 1
         versionName "1.0"

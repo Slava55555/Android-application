@@ -1,4 +1,4 @@
-package com.example.twonumbers;
+package com.example.addtwonumbers;
 
 import android.os.Bundle;
 import android.view.View;

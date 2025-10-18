@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.twonumbers">
+          package="com.example.addtwonumbers">
 
     <application
             android:allowBackup="true"
-            android:label="Two Numbers"
+            android:label="Add Two Numbers"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
-                android:name=".MainActivity"
+                android:name="com.example.addtwonumbers.MainActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
