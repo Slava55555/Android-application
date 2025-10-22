@@ -16,3 +16,6 @@ dependencyResolutionManagement {
 rootProject.name = "Android-application"
 include ':solutions:add-two-numbers'
 include ':solutions:marking-for-booking-flights'
+include 'solutions:random-movie'
+include 'solutions:guess-the-num'
+include 'solutions:calling-corresponding-uri'

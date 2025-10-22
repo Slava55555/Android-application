@@ -11,7 +11,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/solutions" />
             <option value="$PROJECT_DIR$/solutions/add-two-numbers" />
+            <option value="$PROJECT_DIR$/solutions/calling-corresponding-uri" />
+            <option value="$PROJECT_DIR$/solutions/guess-the-num" />
             <option value="$PROJECT_DIR$/solutions/marking-for-booking-flights" />
+            <option value="$PROJECT_DIR$/solutions/random-movie" />
           </set>
         </option>
       </GradleProjectSettings>
