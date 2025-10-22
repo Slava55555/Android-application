@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:background="#f5f5f5">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <!-- Заголовок -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Бронирование авиабилетов"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:textColor="#333333" />
+
+        <!-- Город вылета -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/departure_city"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#666666" />
+
+        <Spinner
+                android:id="@+id/departureSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_background"
+                android:layout_marginBottom="16dp" />
+
+        <!-- Город прилета -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arrival_city"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#666666" />
+
+        <Spinner
+                android:id="@+id/arrivalSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_background"
+                android:layout_marginBottom="24dp" />
+
+        <!-- Дата вылета -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/departure_date"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#666666" />
+
+        <EditText
+                android:id="@+id/departureDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/select_date"
+                android:focusable="false"
+                android:clickable="true"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="16dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+        <!-- Дата прилета -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/return_date"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#666666" />
+
+        <EditText
+                android:id="@+id/returnDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/select_date"
+                android:focusable="false"
+                android:clickable="true"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="24dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+        <!-- Количество пассажиров -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Количество пассажиров"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:textColor="#333333" />
+
+        <!-- Взрослые -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/adults"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:textColor="#666666" />
+
+            <EditText
+                    android:id="@+id/adultsEditText"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:inputType="number"
+                    android:text="1"
+                    android:gravity="center"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+        </LinearLayout>
+
+        <!-- Дети -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/children"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:textColor="#666666" />
+
+            <EditText
+                    android:id="@+id/childrenEditText"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:inputType="number"
+                    android:text="0"
+                    android:gravity="center"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+        </LinearLayout>
+
+        <!-- Младенцы -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/infants"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:textColor="#666666" />
+
+            <EditText
+                    android:id="@+id/infantsEditText"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:inputType="number"
+                    android:text="0"
+                    android:gravity="center"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+        </LinearLayout>
+
+        <!-- Кнопка поиска -->
+        <Button
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/search"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android-application"
 include ':solutions:add-two-numbers'
+include ':solutions:marking-for-booking-flights'

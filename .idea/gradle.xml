@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/solutions" />
             <option value="$PROJECT_DIR$/solutions/add-two-numbers" />
+            <option value="$PROJECT_DIR$/solutions/marking-for-booking-flights" />
           </set>
         </option>
       </GradleProjectSettings>
