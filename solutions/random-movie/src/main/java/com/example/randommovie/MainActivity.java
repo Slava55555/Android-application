@@ -8,7 +8,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.Gson;
 
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,30 +41,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadMovies() {
         try {
-            InputStream stream = getAssets().open("movies.json");
-            InputStreamReader reader = new InputStreamReader(stream);
-            Gson gson = new Gson();
 
-            Movies moviesContainer = gson.fromJson(reader, Movies.class);
-            List<Movie> allMovies = moviesContainer.getMovies();
+            Movies allMovies = new Gson().fromJson(
+                    new InputStreamReader(getAssets().open("movies.json")),
+                    Movies.class
+            );
 
-            String usedMoviesJson = prefs.getString(USED_MOVIES_KEY, "");
-            List<Movie> usedMovies = new ArrayList<>();
-
-            if (!usedMoviesJson.isEmpty()) {
-                Movies usedMoviesContainer = gson.fromJson(usedMoviesJson, Movies.class);
-                if (usedMoviesContainer != null && usedMoviesContainer.getMovies() != null) {
-                    usedMovies = usedMoviesContainer.getMovies();
-                }
-            }
+            Movies usedMovies = new Gson().fromJson(
+                    prefs.getString(USED_MOVIES_KEY, "{\"movies\":[]}"),
+                    Movies.class
+            );
 
             availableMovies = new ArrayList<>();
-            for (Movie movie : allMovies) {
-                if (!isMovieUsed(movie, usedMovies)) {
+            for (Movie movie : allMovies.getMovies()) {
+                if (!isMovieUsed(movie, usedMovies.getMovies())) {
                     availableMovies.add(movie);
                 }
             }
-
             Collections.shuffle(availableMovies);
 
             updateUI();
@@ -127,20 +119,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveUsedMovie(Movie movie) {
-        String usedMoviesJson = prefs.getString(USED_MOVIES_KEY, "");
-        Gson gson = new Gson();
-        Movies usedMoviesContainer;
+        String usedMoviesJson = prefs.getString(USED_MOVIES_KEY, "{\"movies\":[]}");
+        Movies usedMovies = new Gson().fromJson(usedMoviesJson, Movies.class);
 
-        if (usedMoviesJson.isEmpty()) {
-            usedMoviesContainer = new Movies();
-            usedMoviesContainer.setMovies(new ArrayList<>());
-        } else {
-            usedMoviesContainer = gson.fromJson(usedMoviesJson, Movies.class);
-        }
+        usedMovies.getMovies().add(movie);
 
-        usedMoviesContainer.getMovies().add(movie);
-        String updatedJson = gson.toJson(usedMoviesContainer);
-        prefs.edit().putString(USED_MOVIES_KEY, updatedJson).apply();
+        prefs.edit()
+                .putString(USED_MOVIES_KEY, new Gson().toJson(usedMovies))
+                .apply();
     }
 
     private void resetMovieSelection() {
